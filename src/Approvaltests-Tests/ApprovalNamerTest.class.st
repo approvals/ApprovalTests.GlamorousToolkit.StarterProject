@@ -6,10 +6,7 @@ Class {
 
 { #category : #tests }
 ApprovalNamerTest >> testApprovedFile [
-	"a comment"
-	| namer approvedFileName |
-	
-	namer := ApprovalNamer new.
-	approvedFileName := namer approvedFileName, '.txt'.
-	self assert: (File exists: approvedFileName).
+	| approvedFileName |
+	approvedFileName := ApprovalNamer approvalName.
+	self assert: approvedFileName equals: 'ApprovalNamerTest.testApprovedFile'
 ]

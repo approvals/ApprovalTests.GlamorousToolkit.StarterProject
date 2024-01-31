@@ -5,6 +5,17 @@ Class {
 }
 
 { #category : #accessing }
+ApprovalNamer class >> approvalName [
+	| className methodName testName sender|
+	
+	sender := self findTestMethod: thisContext sender.
+	className :=  sender className.
+	methodName :=  sender selector.
+	testName := className , '.',  methodName .
+	^testName 
+]
+
+{ #category : #accessing }
 ApprovalNamer class >> findTestMethod: aContext [
 	| aReceiver |
 	
@@ -21,30 +32,6 @@ ApprovalNamer class >> findTestMethod: aContext [
 ApprovalNamer class >> getApprovedText [
 	| methodName sender |
 	sender := self findTestMethod: thisContext sender.
-	methodName := '_' , sender selector , '_Approved'.
+	methodName :=  sender selector , '_Approved'.
 	^ sender class perform: methodName asSymbol
-]
-
-{ #category : #accessing }
-ApprovalNamer >> approvalName [
-	| className methodName testName sender|
-	
-	sender := self findTestMethod: thisContext sender.
-	className :=  sender className.
-	methodName :=  sender selector.
-	testName := className , '.',  methodName .
-	^testName 
-]
-
-{ #category : #'as yet unclassified' }
-ApprovalNamer >> approvedFileName [
-
-	| name sourceDirectory |
-	name := self approvalName.
-	sourceDirectory := ApprovalTestsBridge sourceDirectory resolve pathString.
-	^ sourceDirectory , '/Approvaltests-Tests/' , name , '.approved'
-]
-
-{ #category : #'as yet unclassified' }
-ApprovalNamer >> receivedFileName [
 ]

@@ -7,8 +7,8 @@ Class {
 	#category : #'Approvaltests-Tests'
 }
 
-{ #category : #'as yet unclassified' }
-SimpleTest class >> _testVerify_Approved [ ^42
+{ #category : #accessing }
+SimpleTest class >> testVerify_Approved [ ^'Hello, world.'
 ]
 
 { #category : #tests }
@@ -16,7 +16,7 @@ SimpleTest >> test3Is3 [
 
 	TestVerifyApproved := 10 atRandom.
 	
-self assert: 3 equals: 4.
+self assert: 3 equals: 3.
 ]
 
 { #category : #tests }
