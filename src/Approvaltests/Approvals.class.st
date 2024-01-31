@@ -18,10 +18,10 @@ Approvals class >> verify: anObject index: anInteger [
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #accessing }
 Approvals class >> verify: anObject options: anOptions [
 
-	self verify: anObject options: Options new.
+	self assert:anObject equals: ApprovalNamer getApprovedText.
 
 ]
 
