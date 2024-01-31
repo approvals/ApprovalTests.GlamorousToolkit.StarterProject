@@ -16,7 +16,7 @@ SimpleTest >> test3Is3 [
 
 	TestVerifyApproved := 10 atRandom.
 	
-self assert: 3 equals: 3.
+self assert: 3 equals: 4.
 ]
 
 { #category : #tests }
