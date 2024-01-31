@@ -6,6 +6,7 @@ Class {
 
 { #category : #tests }
 ApprovalNamerTest >> testApprovedFile [
+	"a comment"
 	| namer approvedFileName |
 	
 	namer := ApprovalNamer new.
