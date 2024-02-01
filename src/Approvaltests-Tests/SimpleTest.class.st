@@ -21,8 +21,12 @@ self assert: 3 equals: 3.
 
 { #category : #tests }
 SimpleTest >> testVerify [
-
 	"Approvals verify: 'Hello, world!'"
-	
-	Approvals verify: 'Hello, world.'.
+
+	self verifyHelloWorld
+]
+
+{ #category : #tests }
+SimpleTest >> verifyHelloWorld [
+	Approvals verify: 'Hello, world.'
 ]
